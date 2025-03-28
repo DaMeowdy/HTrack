@@ -5,11 +5,11 @@ import { Injection } from "models/Injection";
 import { GenerateID } from "./IDGeneration";
 
 export const CreateDosage = (isMain:boolean, amount: number, concentration: string | undefined, hormone: Hormone) => {
-    let id = GenerateID("DOSAGE")
+    let id = GenerateID("DOSAGE");
     if(hormone instanceof OtherAnalogue)
     {
         let dosage: Dosage = {
-            dosageID: "",
+            dosageID: id,
             isMainDosage: isMain,
             concentration: null,
             amount: amount,
@@ -21,7 +21,7 @@ export const CreateDosage = (isMain:boolean, amount: number, concentration: stri
     if(hormone instanceof Injection)
     {
         let dosage: Dosage = {
-            dosageID: "",
+            dosageID: id,
             isMainDosage: isMain,
             concentration: concentration as string | null,
             amount: amount,
