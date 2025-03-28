@@ -1,0 +1,35 @@
+[
+    users : {
+        userId: int 
+        username: "string"
+        pin : string // encrypted pin? salting? sha256hmac?
+        recoveryPhrase : bip39 string?
+        preferredMeasurement: pmol/pgml
+        dosage : [
+            {
+                dosageID: string
+                isMainDosage: true
+                concentration : string, // can be null if not injection
+                amount : int 
+                analogueID : string
+                doses: [
+                    {
+                        doseID,
+                        isDone,
+                        datescheduled
+                    }
+                ]
+            }
+        ]
+        levels: [
+            levelId
+            date tested 
+            levelpmol 
+            level pgml
+        ]
+        
+    }
+    hormones : {
+
+    }
+]
